@@ -21,16 +21,14 @@ var arr = [
   },
 ];
 
-
-let flag=0;
+let flag = 0;
 let allSongs = document.querySelector("#all-songs");
 let audio = new Audio();
-let selectedSong=0;
+let selectedSong = 0;
 let poster = document.querySelector("#left");
 let play = document.querySelector("#play");
 let next = document.querySelector("#next");
 let previous = document.querySelector("#previous");
-
 
 function mainFunc() {
   var clutter = "";
@@ -46,14 +44,14 @@ function mainFunc() {
   });
 
   allSongs.innerHTML = clutter;
-  playSelection();
+  // playSelection();
 }
 mainFunc();
 
-
-function playSelection(){
+function playSelection() {
   poster.style.backgroundImage = `url(${arr[selectedSong].img})`;
   audio.src = arr[selectedSong].url;
+  if(flag==1)
   audio.play();
 }
 
@@ -63,15 +61,32 @@ allSongs.addEventListener("click", (detail) => {
   flag = 1;
   playSelection();
 });
+
 play.addEventListener("click", () => {
-    if (flag==0){
-        play.innerHTML=`<i class="ri-pause-fill"></i>`;
-        flag=1;
-        playSelection();
-    }
-    else{
-        play.innerHTML = `<i class="ri-play-fill"></i>`;
-        flag=0;
-        audio.pause();
-    }
+  if (flag == 0) {
+    play.innerHTML = `<i class="ri-pause-fill"></i>`;
+    flag = 1;
+    playSelection();
+  } else {
+    play.innerHTML = `<i class="ri-play-fill"></i>`;
+    flag = 0;
+    audio.pause();
+  }
+});
+
+next.addEventListener("click", () => {
+  selectedSong = (selectedSong + 1) % arr.length;
+  // if (flag == 1) {
+    playSelection();
+  // }
+});
+previous.addEventListener("click", () => {
+  if (selectedSong > 0) {
+    selectedSong = selectedSong - 1;
+  } else {
+    selectedSong = arr.length;
+  }
+  // if (flag == 1) {
+    playSelection();
+  
 });
