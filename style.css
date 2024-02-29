@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    
+}
+
+html,body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    height: 90%;
+    width: 100%;
+    background-color: #1c1c1c;
+    display: flex;
+    padding: 5vw 10vw;
+
+}
+#left {
+    height: 100%;
+    width: 45%;
+    background-color: #333;
+    background-image: url("https://i.scdn.co/image/ab67616d0000b2739d2efe43d5b7ebc7cb60ca81");
+    background-size: cover;
+    background-position: top;
+}
+#right {
+    height: 100%;
+    width: 55%;
+    padding: 0 3vw;
+}
+#right h3{
+    font-size: 40px;
+    font-weight: 500;
+}
+#all-songs{
+    height: 85%;
+    margin-top: 30px;
+    /* background-color: red;    */
+}
+
+.song-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #4f4f4f;
+    padding: 18px 10px;
+}
+.song-card:nth-last-child(1){
+    border-bottom: 1px solid #4f4f4f;
+}
+.song-card .part1{
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+.song-card img{
+    height: 55px;
+    width: 55px;
+    margin-right: 20px;
+}
+.song-card h2{
+    font-size: 25px;
+    padding-left: 3px ;
+    font-weight: 500;
+}
+.song-card h6{
+    font-size: 16px;
+    font-weight: 500;
+}
+.song-card:hover{
+    background-color: #141414;
+}
+#player{
+    height: 10%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+#player h3{
+    background-color: rgb(37, 35, 40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 50%;
+}
+#player > h3:hover{
+    background-color: #29282a;
+}
+#player>h3 i{
+    font-size: 22px;
+}
+#player>h3:active{
+    scale: 0.98;
+}
